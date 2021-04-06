@@ -1,0 +1,9 @@
+.listar-posts {
+    text-align: center;
+    color: blue;
+}
+
+.button-detalhes {
+    background-color: rgb(69, 201, 201);
+    border-radius: 5px;
+}
