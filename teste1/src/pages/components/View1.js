@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import api from './Api';
+import api from '../../Api';
+import { BrowserRouter, Link } from 'react-router-dom';
+import styles from './styles.css'
 
-import styles from '../src/styles.css'
-
-class View2 extends Component {
+class View1 extends Component {
 
     state = {
         posts: [],
@@ -11,7 +11,6 @@ class View2 extends Component {
 
     async componentDidMount() {
         const resposta = await api.get('');
-        // console.log(resposta.data);
         this.setState({ posts: resposta.data })
     }
 
@@ -19,6 +18,8 @@ class View2 extends Component {
 
             const { posts } = this.state
             return ( <
+                BrowserRouter >
+                <
                 div >
 
                 <
@@ -56,18 +57,28 @@ class View2 extends Component {
                             h2 >
                             <
                             div >
+
                             <
                             button className = "button-detalhes" >
-                            Detalhes < /button>   < /
-                            div > <
-                            /li> ))
+                            <
+                            Link to = "/View2" > Detalhes < /Link>   <
+                            /
+                            button >
+
+                            <
+                            /div > 
+
+                            <
+                            /li > ))
                         }
 
                         <
-                        /div>
+                        /div> 
 
+                        <
+                        /
+                        BrowserRouter >
                     );
                 }
             }
-
-            export default View2;
+            export default View1;
